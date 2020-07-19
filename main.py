@@ -1,0 +1,15 @@
+import pytube as pt
+import warnings
+warnings.filterwarnings("ignore")
+# yt=pt.YouTube(input("Enter link"))
+yt=pt.YouTube(input("Enter Video Link : "))
+print("Title of Video: ",yt.title)
+print("Number of views: ",yt.views)
+print("Length of Video: ",yt.length)
+print("Rating of Video: ",yt.rating)
+print("Captions: ",yt.captions.all())
+print("Thumbnail ",yt.thumbnail_url)
+ys = yt.streams.get_highest_resolution()
+ys.download()
+# yt.streams.filter(only_audio=True).last().download("Highest_Quality_Audio")
+# yt.streams.filter(only_video=True).first().download("Highest_Quality_Video")
